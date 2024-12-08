@@ -1,7 +1,5 @@
 let computerChoice;
 let humanChoice;
-let computerScore = 0;
-let humanScore = 0;
 
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 99) + 1;
@@ -14,65 +12,81 @@ function getComputerChoice() {
     else {
         computerChoice = "scissors";
     }
-    //console.log(computerChoice);
 }
 
 function getHumanChoice() {
     humanChoice = prompt("Enter your choice: ");
     humanChoice = humanChoice.toLowerCase();
-    //console.log(humanChoice);
 }
 
-function printScore() {
+function printScore(humanScore, computerScore) {
     console.log("Human score: " + humanScore);
     console.log("Computer score: " + computerScore);
+    console.log();
 }
 
-function playRound() {
-    if(humanChoice == "rock" && computerChoice == "rock") {
-        alert("Tie");
+
+
+function playGame() {
+    let computerScore = 0;
+    let humanScore = 0;
+
+    function playRound() {
+        getComputerChoice();
+        getHumanChoice();
+
+        if(humanChoice == "rock" && computerChoice == "rock") {
+            console.log("Tie");
+            printScore(humanScore, computerScore);
+        }
+        else if(humanChoice == "rock" && computerChoice == "paper") {
+            computerScore += 1;
+            console.log("Rock loses to paper");
+            printScore(humanScore, computerScore);
+        }
+        else if(humanChoice == "rock" && computerChoice == "scissors") {
+            humanScore += 1;
+            console.log("Rock beats scissors");
+            printScore(humanScore, computerScore);
+        }
+        else if(humanChoice == "paper" && computerChoice == "paper") {
+            console.log("Tie");
+            printScore(humanScore, computerScore);
+        }
+        else if(humanChoice == "paper" && computerChoice == "rock") {
+            humanScore += 1;
+            console.log("Paper beats rock");
+            printScore(humanScore, computerScore);
+        }
+        else if(humanChoice == "paper" && computerChoice == "scissors") {
+            computerScore += 1;
+            console.log("Paper loses to scissors");
+            printScore(humanScore, computerScore);
+        }
+        else if(humanChoice == "scissors" && computerChoice == "scissors") {
+            console.log("Tie");
+            printScore(humanScore, computerScore);
+        }
+        else if(humanChoice == "scissors" && computerChoice == "rock") {
+            computerScore += 1;
+            console.log("Scissors lose to rock");
+            printScore(humanScore, computerScore);
+        }
+        else if(humanChoice == "scissors" && computerChoice == "paper") {
+            humanScore += 1;
+            console.log("Scissors beat paper");
+            printScore(humanScore, computerScore);
+        }
+        else {
+            alert("Enter valid input!");
+        }
     }
-    else if(humanChoice == "rock" && computerChoice == "paper") {
-        computerScore += 1;
-        alert("Rock loses to paper");
-        printScore();
+    for(let i = 1; i <= 5; i++) {
+        playRound();
     }
-    else if(humanChoice == "rock" && computerChoice == "scissors") {
-        humanScore += 1;
-        alert("Rock beats scissors");
-        printScore();
-    }
-    else if(humanChoice == "paper" && computerChoice == "paper") {
-        alert("Tie");
-    }
-    else if(humanChoice == "paper" && computerChoice == "rock") {
-        humanScore += 1;
-        alert("Paper beats rock");
-        printScore();
-    }
-    else if(humanChoice == "paper" && computerChoice == "scissors") {
-        computerScore += 1;
-        alert("Paper loses to scissors");
-        printScore();
-    }
-    else if(humanChoice == "scissors" && computerChoice == "scissors") {
-        alert("Tie");
-    }
-    else if(humanChoice == "scissors" && computerChoice == "rock") {
-        humanScore += 1;
-        alert("Scissors lose to rock");
-        printScore();
-    }
-    else if(humanChoice == "scissors" && computerChoice == "paper") {
-        computerScore += 1;
-        alert("Scissors beat paper");
-        printScore();
-    }
-    else {
-        alert("Enter valid input!");
-    }
+    console.log("\nFinal score: ")
+    printScore(humanScore, computerScore);
+
 }
 
-getComputerChoice();
-getHumanChoice();
-playRound();
+playGame();
