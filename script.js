@@ -1,23 +1,12 @@
-let computerChoice;
-let humanChoice;
+let computerChoice = "";
+let humanChoice = "";
 
 function getComputerChoice() {
-    let randomNumber = Math.floor(Math.random() * 99) + 1;
-    if(randomNumber >= 0 && randomNumber <= 33) {
-        computerChoice = "rock";
-    }
-    else if(randomNumber >= 34 && randomNumber <= 66) {
-        computerChoice = "paper";
-    }
-    else {
-        computerChoice = "scissors";
-    }
+    let choices = ["rock", "paper", "scissors"];
+    let randomIndex = Math.floor(Math.random() * choices.length);
+    computerChoice = choices[randomIndex];
 }
 
-function getHumanChoice() {
-    humanChoice = prompt("Enter your choice: ");
-    humanChoice = humanChoice.toLowerCase();
-}
 
 function printScore(humanScore, computerScore) {
     console.log("Human score: " + humanScore);
@@ -25,15 +14,30 @@ function printScore(humanScore, computerScore) {
     console.log();
 }
 
-
-
 function playGame() {
     let computerScore = 0;
     let humanScore = 0;
 
+    const rock = document.querySelector("#rock");
+    rock.addEventListener("click", () => {
+        humanChoice = "rock";
+        playRound();
+    });
+
+    const paper = document.querySelector("#paper");
+    paper.addEventListener("click", () => {
+        humanChoice = "paper";
+        playRound();
+    });
+
+    const scissors = document.querySelector("#scissors");
+    scissors.addEventListener("click", () => {
+        humanChoice = "scissors";
+        playRound();
+    });
+
     function playRound() {
         getComputerChoice();
-        getHumanChoice();
 
         if(humanChoice == "rock" && computerChoice == "rock") {
             console.log("Tie");
@@ -80,13 +84,26 @@ function playGame() {
         else {
             alert("Enter valid input!");
         }
-    }
-    for(let i = 1; i <= 5; i++) {
-        playRound();
-    }
-    console.log("\nFinal score: ")
-    printScore(humanScore, computerScore);
 
+        if(humanScore == 5 || computerScore == 5) {
+            console.log("\nFinal score: ")
+            printScore(humanScore, computerScore);
+            
+            if(humanScore == 5)
+                console.log("Human wins!\n");
+            else if(computerScore == 5)
+                console.log("Computer wins!\n");
+            else
+                console.log("Error\n");
+
+            computerScore = 0;
+            humanScore = 0;
+        }
+    }
 }
 
 playGame();
+
+
+
+
