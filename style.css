@@ -1,0 +1,60 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    flex-direction: column; 
+}
+
+.content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;  
+    align-items: center;
+}
+
+
+h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 300px;
+    margin-bottom: 20px; 
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: black;
+}
+
+.scoreboard {
+    margin-top: 20px;  
+    font-size: 18px;
+    color: black;
+    margin-bottom: 20px;  
+}
+
+#message-container {
+    margin-top: 10px;
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
