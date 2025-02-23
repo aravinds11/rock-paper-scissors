@@ -1,28 +1,22 @@
-# rock-paper-scissors
+# Rock Paper Scissors
 
-This is a simple Rock-Paper-Scissors game developed as part of [The Odin Project](https://www.theodinproject.com/). The game is played entirely in the browser console, using JavaScript and HTML. It allows the user to play against the computer for a total of 5 rounds.
+This is a simple Rock-Paper-Scissors game developed as part of [The Odin Project](https://www.theodinproject.com/). The game is played entirely in the browser, using JavaScript, HTML, and CSS. It allows the user to play against the computer, and the game continues until one player reaches 5 points.
 
 ## Project Overview
 
-The game of Rock-Paper-Scissors pits the user against the computer. Each player selects one of three options: Rock, Paper, or Scissors. The winner of each round is determined by the following rules:
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-The game is played for 5 rounds, and after the final round, the winner is determined based on who won the most rounds. The results will be displayed in the console.
+The game of Rock-Paper-Scissors pits the user against the computer. Each player selects one of three options: Rock, Paper, or Scissors. The game continues until either the player or the computer scores 5 points. Once this happens, the winner is displayed. The results, scores, and the outcome of each round are shown on the webpage.
 
 ## Technologies Used
 
 - HTML
+- CSS
 - JavaScript
 
 ## Features
 
-- **Console-Based Gameplay**: The game is played entirely in the browser console, with the user interacting by typing commands.
-- **5 Rounds**: The game runs for 5 rounds, and the player can see the results of each round as well as the current score in the console.
-- **Random Computer Choices**: The computer randomly selects Rock, Paper, or Scissors for each round.
-- **Game Results**: After 5 rounds, the game displays the final result, showing whether the user won, lost, or if it was a tie.
+- **Browser-Based Gameplay**: The game is played directly in the browser, with buttons for user interaction (Rock, Paper, or Scissors).
+- **Continuous Play**: The game continues until one of the players (human or computer) reaches 5 points. The player can see the current score after each round.
+- **Real-Time Score Update**: The score for both the player and the computer is updated after each round, and the winner is displayed once a player reaches 5 points.
 
 ## Acknowledgements
 
