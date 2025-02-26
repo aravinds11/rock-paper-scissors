@@ -2,10 +2,6 @@
 
 This is a simple Rock-Paper-Scissors game developed as part of [The Odin Project](https://www.theodinproject.com/). The game is played entirely in the browser, using JavaScript, HTML, and CSS. It allows the user to play against the computer, and the game continues until one player reaches 5 points.
 
-## Project Overview
-
-The game of Rock-Paper-Scissors pits the user against the computer. Each player selects one of three options: Rock, Paper, or Scissors. The game continues until either the player or the computer scores 5 points. Once this happens, the winner is displayed. The results, scores, and the outcome of each round are shown on the webpage.
-
 ## Technologies Used
 
 - HTML
